@@ -1,0 +1,37 @@
+device:
+  use_amp: true
+  seed: 42
+  device_type: "cuda"
+  max_gpu_mem_gb: 80
+
+model:
+  pretrained_path: "/path/to/your/trigger/models/llamma2/Llamma-2-7b-ukr-AEG"
+  local_files_only: True
+  output_hidden_states: true
+
+tokenizer:
+  path: "/path/to/your/trigger/models/llamma2/Llamma-2-7b-ukr-AEG"
+  local_files_only: True
+
+embedding:
+  path: "/path/to/your/trigger/models/emb-bge/bge-large-en-v1.5"
+  local_files_only: True
+
+# 固定不变的参数
+lora_fixed:
+  dropout: 0.05
+  target_modules: ["q_proj", "v_proj", "k_proj"]
+  alpha_ratio: 4  # r × ratio → alpha
+
+# 动态参数搜索空间（由算法模块使用）
+lora_search_space:
+  r: [4, 8]
+  lora_alpha: [8, 16]
+  lr: [0.0001, 0.0003, 0.0005]
+  num_epochs: [5, 8]
+  batch_size: [1, 2]
+
+buffer:
+  anomaly_cluster_path: "/path/to/your/trigger/data/clusters/clusters.json"
+  lora_save_dir: "/path/to/your/trigger/data/checkpoints"
+  lora_buffer_path: "/path/to/your/trigger/data/lora/lora_buffer.json"
