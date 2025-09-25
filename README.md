@@ -1,15 +1,15 @@
 # SAGE
 Adaptive Self-Training Towards Endogenous Memory in Large Language Models
 
-#Preparation
+# Preparation
 
-##Datasets
+## Datasets
 
-###ID dataset 
+### ID dataset 
 
 https://huggingface.co/datasets/mandarjoshi/trivia_qa/
 
-###OOD dataset 
+### OOD dataset 
 
 https://huggingface.co/datasets/openai/gsm8k
 
@@ -17,20 +17,16 @@ https://huggingface.co/datasets/coastalcph/lex_glue
 
 https://huggingface.co/datasets/qiaojin/PubMedQA
 
-##Base Model
+## Base Model
 
 LLama 2- 7B
 
-##Embedding Model
+## Embedding Model
 
 https://huggingface.co/BAAI/bge-large-en-v1.5
 
-#path/to/your
+# path/to/your
 
-#start
+# Start
 
-Enter the trigger-model folder and execute 
-
-python main.py 
-
-to start your journey
+Enter the trigger-model folder and execute ''python main.py ''to start your journey
